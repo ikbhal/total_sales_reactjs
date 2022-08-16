@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Student Management</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          
+            $.get("http://localhost:3001/get_all_students", function(data, status){
+                // alert("Data: " + data + "\nStatus: " + status);
+                console.log("data : ", data );
+
+                var i =0;
+                //
+                var text = "";
+                for(i=0;i<data.length;i++){
+                    var oneStudent =data[i];
+                    var name = oneStudent.name;
+                    var rollNumber = oneStudent.rollNumber;
+                    text += "Roll number: " + rollNumber + ", Name:" + name + ", " ;
+                }
+
+                $("#output").text(text);
+            });
+          
+        });
+        </script>
+</head>
+<body>
+    <h1>Student Management</h1>
+    
+    <h2>Create Student</h2>
+    <form action="http://localhost:3001/students" method="POST">
+
+        <label for="roll_number">Roll Number:</label><br>
+        <input type="text" id="roll_number" name="roll_number" value=""><br>
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value=""><br>
+        <br>
+
+        <input type="submit" value="Add">
+      </form> 
+
+      <h3>Students</h3>
+      <div id="output">
+
+      </div>
+      
+</body>
+</html>

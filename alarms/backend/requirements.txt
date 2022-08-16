@@ -1,0 +1,21 @@
+$1) user registration (form, server)
+$2) user login (form, server)
+$3) user home page
+  user enter correct details -> which first page -> homepage 
+    add session 
+4) alarm add
+5) alarm delete
+6) alarm list 
+---
+crud -> create c, read r, update u , delete d 
+crud 
+---
+student, alarm, teacher, product, order, rider, driver, auto driver, carpeenter 
+
+1) add form 
+2) update form 
+3) delete 
+4) get one 
+5) get all 
+5) search 
+----
